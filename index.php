@@ -87,30 +87,38 @@ $categoriesArray = array_values($categoriesArray);
 
   <div class="album py-5 bg-light">
 
-<?php
-
-
-
-foreach ($categoriesArray as $catKey => $catVal) {
-?>
+    <?php
+    if (empty($categoriesArray)) {
+      ?>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 mx-auto text-center">
+        <p>No categories found</p>
+      </div>
+    </div>
+    <?php     
+    }
+    else {
+    foreach ($categoriesArray as $catKey => $catVal) {
+    ?>
     <div class="container">
-          <h2 class="p-2 border-bottom"><?php echo ucfirst($catVal); ?></h2>
-
+      <h2 class="p-2 border-bottom"><?php echo ucfirst($catVal); ?></h2>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3 mb-5">
 <?php foreach ($productsArray as $prodKey => $prodVal) { 
         if ($productsArray[$prodKey][0] == $categoriesArray[$catKey]) {?>
               <div class="col">
                 <div class="card shadow-sm">
-                  <img class="img-fluid img-thumbnail" src="images/<?php echo $productsArray[$prodKey][4];?>" />
+                  <?php $image = (file_exists('images/'.$productsArray[$prodKey][5])) ? $productsArray[$prodKey][5] : 'placrreholder.png'; ?>
+                  <img class="img-fluid img-thumbnail" src="images/<?php echo $image;?>" />
 
                   <div class="card-body">
                     <p class="card-title"><?php echo $productsArray[$prodKey][1]; ?></p>
 
                     <p class="card-text"><?php echo $productsArray[$prodKey][2]; ?></p>
                     <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group"> 
-                      </div>
-                      <small class="text-muted">$<?php echo $productsArray[$prodKey][3];?></small>
+                      <small class="text-muted">In Stock: <?php echo ucfirst($productsArray[$prodKey][4]);?></small>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small class="text-muted">Price: <?php echo $productsArray[$prodKey][3];?></small>
                     </div>
                   </div>
                 </div>
@@ -121,7 +129,8 @@ foreach ($categoriesArray as $catKey => $catVal) {
       </div>
       
     </div>
-    <?php } ?>
+<?php }//end foreach 
+}//end if else?>
   </div>
 
 </main>
