@@ -15,10 +15,7 @@ $categoriesArray = array_values($categoriesArray);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Kenny's</title>
+    <title><?php readfile("title.txt");?></title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
@@ -66,7 +63,7 @@ $categoriesArray = array_values($categoriesArray);
     <div class="container mt3">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>-->
-        <strong class="header-text">Kenny's</strong>
+        <strong class="header-text"><?php readfile("title.txt");?></strong>
       </a>
     </div>
   </div>
@@ -79,8 +76,8 @@ $categoriesArray = array_values($categoriesArray);
   <section class="py-5 text-center container">
     <div class="row">
       <div class="col-lg-8 col-md-8 mx-auto">
-        <h1 class="fw-light">Kenny's</h1>
-                <p class="lead text-muted"><?php echo readfile("text.txt");?></p>
+        <h1 class="fw-light"><?php readfile("title.txt");?></h1>
+                <p class="lead text-muted"><?php readfile("text.txt");?></p>
       </div>
     </div>
   </section>
