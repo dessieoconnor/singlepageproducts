@@ -80,7 +80,7 @@ $categoriesArray = array_values($categoriesArray);
     <div class="row">
       <div class="col-lg-8 col-md-8 mx-auto">
         <h1 class="fw-light">Kenny's</h1>
-                <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="lead text-muted"><?php echo readfile("text.txt");?></p>
       </div>
     </div>
   </section>
