@@ -4,6 +4,7 @@ $productsArray = array_map('str_getcsv', file('products.csv'));
 $categoriesArray = array();
 
 
+
 foreach ($productsArray as $k=>$v) {
   $categoriesArray[] = $v[0];
 }
