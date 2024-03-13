@@ -5,6 +5,7 @@ $categoriesArray = array();
 
 
 
+
 foreach ($productsArray as $k=>$v) {
   $categoriesArray[] = $v[0];
 }
